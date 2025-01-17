@@ -1,0 +1,4 @@
+# Do the progaram in the Python 2 
+n=int(input())
+a=tuple(map(int,raw_input().split()))
+print hash(a)
