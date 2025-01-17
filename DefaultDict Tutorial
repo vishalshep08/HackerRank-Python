@@ -1,0 +1,19 @@
+from collections import defaultdict
+
+def default_dict():
+    n,m = map(int,input().split())
+
+    group_a = [input().strip() for _ in range(n)]
+    group_b = [input().strip() for _ in range(m)]
+
+    indices = defaultdict(list)
+    for i, j in enumerate(group_a):
+        indices[j].append(i+1)
+
+    for j in group_b:
+        if j in indices:
+            print(*indices[j])
+        else:
+            print(-1)
+
+default_dict()
