@@ -1,0 +1,23 @@
+def print_rangoli(size):
+    # your code goes here
+    # Define the alphabet
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+    # List to store each line of the rangoli
+    lines = []
+
+    for i in range(size):
+        # Generate the left and right parts of the line
+        left = '-'.join(alphabet[size-1:size-i-1:-1])
+        right = '-'.join(alphabet[size-i-1:size])
+
+        # Combine left and right parts
+        line = (left + ('-' if left and right else '') + right).center(4*size-3, '-')
+        lines.append(line)
+
+    # Print the full rangoli by combining top and bottom parts
+    print('\n'.join(lines + lines[-2::-1]))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
