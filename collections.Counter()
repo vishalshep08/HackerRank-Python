@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from collections import Counter
+
+# Read input values
+num_shoes = int(input())  # Number of shoes available
+shoe_sizes = list(map(int, input().split()))  # Shoe sizes available in the shop
+num_customers = int(input())  # Number of customers
+
+# Create a Counter for the available shoe sizes
+shoe_stock = Counter(shoe_sizes)
+
+total_earnings = 0
+
+# Process each customer's request
+for _ in range(num_customers):
+    size, price = map(int, input().split())  # Customer's desired size and price
+    if shoe_stock[size] > 0:  # Check if the shoe size is available
+        total_earnings += price  # Add the price to earnings
+        shoe_stock[size] -= 1  # Decrease the stock of that shoe size
+
+# Output the total earnings
+print(total_earnings)
