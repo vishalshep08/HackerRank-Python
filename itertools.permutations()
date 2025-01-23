@@ -1,0 +1,15 @@
+import itertools
+
+# Read input and split it by space to get the string and the number
+s, n = input().split()
+n = int(n)
+
+# Generate all permutations of length n
+permutations = itertools.permutations(s, n)
+
+# Convert permutations to a list of strings and sort them
+sorted_permutations = sorted("".join(p) for p in permutations)
+
+# Print each permutation
+for p in sorted_permutations:
+    print(p)
