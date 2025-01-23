@@ -1,0 +1,23 @@
+# Read the number of words
+n = int(input())
+
+# Create a dictionary to store the frequency of each word
+word_count = {}
+order_of_appearance = []
+
+# Process each word
+for _ in range(n):
+    word = input().strip()  # Read the word
+    
+    # If it's a new word, add it to the dictionary and list
+    if word not in word_count:
+        word_count[word] = 1
+        order_of_appearance.append(word)
+    else:
+        word_count[word] += 1
+
+# Output the number of distinct words
+print(len(order_of_appearance))
+
+# Output the number of occurrences for each word in order of appearance
+print(' '.join(str(word_count[word]) for word in order_of_appearance))
