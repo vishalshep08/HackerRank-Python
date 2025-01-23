@@ -1,0 +1,24 @@
+from collections import deque
+
+# Read the number of operations
+n = int(input())
+
+# Initialize the deque
+dq = deque()
+
+# Process each operation
+for _ in range(n):
+    operation = input().split()
+    method = operation[0]
+    
+    if method == "append":
+        dq.append(int(operation[1]))
+    elif method == "appendleft":
+        dq.appendleft(int(operation[1]))
+    elif method == "pop":
+        dq.pop()
+    elif method == "popleft":
+        dq.popleft()
+
+# Output the elements of the deque
+print(" ".join(map(str, dq)))
