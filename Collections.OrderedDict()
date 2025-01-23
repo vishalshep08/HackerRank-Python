@@ -1,0 +1,26 @@
+# Read the number of items
+n = int(input())
+
+# Create a dictionary to store the total price of each item
+item_prices = {}
+
+# Process each item
+for _ in range(n):
+    line = input().split()
+    
+    # All except the last word are considered the item name
+    item_name = ' '.join(line[:-1])
+    
+    # The last word is the price
+    price = int(line[-1])
+    
+    # If the item is already in the dictionary, add its price
+    if item_name in item_prices:
+        item_prices[item_name] += price
+    else:
+        # If it's the first time we encounter the item, add it to the dictionary
+        item_prices[item_name] = price
+
+# Output each item and its total price in the order of its first appearance
+for item, total_price in item_prices.items():
+    print(f"{item} {total_price}")
