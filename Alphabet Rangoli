@@ -1,5 +1,5 @@
 def print_rangoli(size):
-    # your code goes here
+    
     # Define the alphabet
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
