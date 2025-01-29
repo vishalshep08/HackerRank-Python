@@ -13,7 +13,7 @@ def print_pattern(n, m):
         pattern = (".|." * (2 * i - 1)).center(m, "-")
         print(pattern)
 
-# Input dimensions for the mat
+
 n, m = map(int, input().split())
 if m != 3 * n or n % 2 == 0 or n <= 0:
     print()
